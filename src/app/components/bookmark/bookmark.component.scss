@@ -1,0 +1,29 @@
+.bookmark {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin: 5px;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.7rem;
+  a {
+    position: absolute;
+    text-decoration: none;
+    color: #fff;
+    margin: 0;
+    background: #333;
+    opacity: 0;
+    span {
+      padding: 5px;
+      width: 100%;
+      text-align: center;
+      word-wrap: break-word;
+    }
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+  img {
+    height: 100px;
+    width: 100px;
+  }
+}

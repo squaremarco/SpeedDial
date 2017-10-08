@@ -1,7 +1,14 @@
 .list-group-item {
   background: transparent;
   border: none;
-  padding: 0.5rem 2rem;
+  padding: 0.5rem 0rem;
   color: #fff;
 }
 
+.dragula-handle {
+  cursor: move;
+}
+
+.item-delete {
+  cursor: pointer;
+}

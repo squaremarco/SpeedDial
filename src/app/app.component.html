@@ -1,15 +1,10 @@
-<div [ngStyle]="{'background': router.url === '/edit' ? '#fff' : '#333' }" class="app-component-wrapper">
-  <nav [ngClass]="router.url === '/edit' ? 'navbar-light' : 'navbar-dark'" class="navbar justify-content-between">
-      <span class="navbar-text">
-        Speed Dial
-      </span>
+<div [ngClass]="router.url === '/edit' ? 'app-bg-light' : 'app-bg-dark d-flex flex-column justify-content-center align-items-center'" class="container-fluid h-100">
+  <nav [ngClass]="router.url === '/edit' ? 'navbar-light' : 'navbar-dark'" class="navbar justify-content-end fixed-top">
       <div class="btn-group" role="group">
-        <button *ngIf="router.url === '/edit'" class="btn btn-sm align-middle btn-outline-dark" type="button">Import</button>
-        <button *ngIf="router.url === '/edit'" class="btn btn-sm align-middle btn-outline-dark" type="button" (click)="exportList();">Export</button>
-        <button [ngClass]="router.url === '/edit' ? 'btn-outline-dark' : 'btn-outline-light'" class="btn btn-sm align-middle" type="button" (click)="toggleRoute();">Edit</button>
+        <button *ngIf="router.url === '/edit'" class="btn btn-sm align-middle btn-outline-dark" type="button" (click)='openImportModal();'>Import</button>
+        <button *ngIf="router.url === '/edit'" class="btn btn-sm align-middle btn-outline-dark" type="button" (click)="exportListToClipboard();">Export</button>
+        <button [ngClass]="router.url === '/edit' ? 'btn-outline-dark' : 'btn-outline-light'" class="btn btn-sm align-middle" type="button" [routerLink]="router.url === '/' ? '/edit' : '/'">Edit</button>
       </div>
   </nav>
-  <div class="container">
-      <router-outlet></router-outlet>
-  </div>
+  <router-outlet></router-outlet>
 </div>

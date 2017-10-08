@@ -1,13 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule } from '@angular/router';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DragulaModule } from 'ng2-dragula';
 
 import { AppComponent } from './app.component';
 import { AppRoutes } from './app.routes';
-import { BookmarkComponent, DialComponent, ListComponent } from './components';
+import { BookmarkComponent, DialComponent, ListComponent, ImportModalComponent } from './components';
+import { BookmarkService } from "./services";
 
 
 @NgModule({
@@ -15,15 +16,21 @@ import { BookmarkComponent, DialComponent, ListComponent } from './components';
     AppComponent,
     BookmarkComponent,
     DialComponent,
-    ListComponent
+    ListComponent,
+    ImportModalComponent
   ],
   imports: [
     RouterModule.forRoot(AppRoutes),
     BrowserModule,
+    DragulaModule,
     NgbModule.forRoot(),
-    DragulaModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  entryComponents: [
+    ImportModalComponent
+  ],
+  providers: [
+    BookmarkService
+  ],
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }

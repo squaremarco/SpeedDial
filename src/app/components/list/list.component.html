@@ -1,6 +1,16 @@
-<div class="container">
-  <div class="list-group" [dragula]='"list-bag"'>
-    <div class="list-group-item">
+<div class="container mt-5 pb-3">
+  <div class="list-group" [dragula]='"list-bag"' [dragulaModel]='getItems()'>
+    <div *ngFor='let item of getItems(); index as i' class="list-group-item">
+      <div class="input-group">
+        <span class="input-group-addon dragula-handle">@</span>
+        <input type="text" class="form-control" placeholder="Title" [value]='item.title' (keyup)="item.title = $event.target.value; updateItems();">
+        <input type="text" class="form-control" placeholder="Url" [value]='item.url' (keyup)="item.url = $event.target.value; updateItems();">
+        <input type="text" class="form-control" placeholder="ImageUrl" [value]='item.imageUrl' (keyup)="item.imageUrl = $event.target.value; updateItems();">
+        <span class="btn-size-sm input-group-addon item-delete" (click)="removeItem(i);">🞨</span>
+      </div>
     </div>
+  </div>
+  <div class="row justify-content-center mt-2">
+    <button class="btn btn-secondary btn-sm btn-block col-6" (click)="addItem();">Add</button>
   </div>
 </div>

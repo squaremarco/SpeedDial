@@ -1,1 +1,5 @@
-<div>DIAL</div>
+<div class="container d-flex flex-wrap justify-content-center">
+  <app-bookmark *ngFor="let item of getItems();" [title]="item.title" [url]="item.url" [imageUrl]="item.imageUrl"></app-bookmark>
+</div>
+
+

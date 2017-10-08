@@ -1,0 +1,7 @@
+<div class="modal-body">
+      <input class="form-control" placeholder="Insert import string" [value]="string "(input)="string = $event.target.value">
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-dark" (click)="activeModal.close()">Close</button>
+  <button type="button" class="btn btn-dark" (click)="importItems(string); activeModal.close()">Import</button>
+</div>
