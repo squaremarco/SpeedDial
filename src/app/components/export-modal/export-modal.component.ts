@@ -3,15 +3,14 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { BookmarkService } from '../../services';
 
 @Component({
-  selector: 'app-import-modal',
-  templateUrl: './import-modal.component.html',
-  styleUrls: ['./import-modal.component.scss']
+  selector: 'app-export-modal',
+  templateUrl: './export-modal.component.html',
+  styleUrls: ['./export-modal.component.scss']
 })
-export class ImportModalComponent {
-  string: string = '';
+export class ExportModalComponent {
   constructor(private bookmarkService: BookmarkService, public activeModal: NgbActiveModal) { }
 
-  importItems(string: string) {
-    this.bookmarkService.setBookmarksByString(string);
+  exportItems(): string {
+    return this.bookmarkService.getBookmarksAsString();
   }
 }

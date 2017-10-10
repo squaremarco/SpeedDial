@@ -8,8 +8,8 @@ export class BookmarkService {
   private bookmarks:Array<Bookmark>;
 
   constructor() {
-    let content = JSON.parse(localStorage.getItem('bookmarks'));
-    if(content === null || content === []) {
+    let content = localStorage.getItem('bookmarks') ? JSON.parse(localStorage.getItem('bookmarks')) : null;
+    if(!content) {
       this.resetBookmarks();
     } else {
       this.setBookmarks(content);

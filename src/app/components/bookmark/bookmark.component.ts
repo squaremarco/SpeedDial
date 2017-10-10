@@ -5,7 +5,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./bookmark.component.scss']
 })
 export class BookmarkComponent {
-  @Input() title:String;
-  @Input() url:String;
-  @Input() imageUrl:String;
+  @Input() title;
+  @Input() url;
+  @Input() imageUrl;
 }

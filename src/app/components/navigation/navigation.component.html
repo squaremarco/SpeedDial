@@ -1,7 +1,8 @@
-<nav [ngClass]="isRoute('/edit') ? 'navbar-light' : 'navbar-dark'" class="navbar justify-content-end fixed-top">
+<nav [ngClass]="isRoute('/edit') ? 'navbar-light' : 'navbar-dark'" class="navbar justify-content-end  fixed-top">
   <div class="btn-group" role="group">
-    <button *ngIf="isRoute('/edit')" class="btn btn-sm align-middle btn-outline-dark" type="button" (click)='openImportModal();'>Import</button>
-    <button *ngIf="isRoute('/edit')" class="btn btn-sm align-middle btn-outline-dark" type="button" (click)='openExportModal();'>Export</button>
-    <button [ngClass]="isRoute('/edit') ? 'btn-outline-dark' : 'btn-outline-light'" class="btn btn-sm align-middle" type="button" [routerLink]="isRoute('/edit') ? '/' : '/edit'">Edit</button>
+    <button *ngIf="isRoute('/edit')" class="btn btn-sm align-middle btn-outline-secondary" (click)="addItem();">Add Bookmark</button>
+    <button *ngIf="isRoute('/edit')" class="btn btn-sm align-middle btn-outline-secondary" type="button" (click)='openImportModal();'>Import</button>
+    <button *ngIf="isRoute('/edit')" class="btn btn-sm align-middle btn-outline-secondary" type="button" (click)='openExportModal();'>Export</button>
+    <button [ngClass]="isRoute('/edit') ? 'btn-outline-secondary' : 'btn-outline-light'" class="btn btn-sm align-middle" type="button" [routerLink]="isRoute('/edit') ? '/' : '/edit'">Edit</button>
   </div>
 </nav>

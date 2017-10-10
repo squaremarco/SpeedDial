@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
+import { Bookmark } from '../../classes';
+import { BookmarkService } from '../../services';
+
 import { ExportModalComponent } from '../../components/export-modal/export-modal.component';
 import { ImportModalComponent } from '../../components/import-modal/import-modal.component';
 
@@ -12,7 +16,7 @@ import { ImportModalComponent } from '../../components/import-modal/import-modal
   styleUrls: ['./navigation.component.scss']
 })
 export class NavigationComponent {
-  constructor(private router: Router, private modalService: NgbModal) { }
+  constructor(private router: Router, private bookmarkService: BookmarkService, private modalService: NgbModal) { }
 
   getRoute(): string {
     return this.router.url;
@@ -20,6 +24,10 @@ export class NavigationComponent {
 
   isRoute(s: string): boolean {
     return this.getRoute() === '/edit'
+  }
+
+  addItem(): void {
+    this.bookmarkService.addBookmark(new Bookmark());
   }
 
   openExportModal(): void {

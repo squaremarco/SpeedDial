@@ -6,7 +6,7 @@ import { DragulaModule } from 'ng2-dragula';
 import { RoutingModule } from './modules';
 
 import { AppComponent } from './app.component';
-import { BookmarkComponent, DialComponent, ListComponent, NavigationComponent, ImportModalComponent } from './components';
+import { BookmarkComponent, DialComponent, ListComponent, NavigationComponent, ImportModalComponent, ExportModalComponent } from './components';
 import { BookmarkService } from "./services";
 
 
@@ -17,6 +17,7 @@ import { BookmarkService } from "./services";
     DialComponent,
     ListComponent,
     ImportModalComponent,
+    ExportModalComponent,
     NavigationComponent
   ],
   imports: [
@@ -26,7 +27,8 @@ import { BookmarkService } from "./services";
     RoutingModule
   ],
   entryComponents: [
-    ImportModalComponent
+    ImportModalComponent,
+    ExportModalComponent
   ],
   providers: [
     BookmarkService

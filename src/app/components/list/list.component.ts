@@ -10,44 +10,32 @@ import { BookmarkService } from '../../services';
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit, OnDestroy {
-  constructor(private dragulaService:DragulaService, private bookmarkService:BookmarkService) {
+  constructor(private dragulaService: DragulaService, private bookmarkService: BookmarkService) {
   };
 
-  ngOnInit():void {
-    let self = this;
-
-    self.dragulaService.setOptions('list-bag', {
-      'moves': function(e, c, h){
+  ngOnInit(): void {
+    this.dragulaService.setOptions('list-bag', {
+      'moves': function (e, c, h) {
         return h.className.includes("dragula-handle");
       }
     });
 
-    self.dragulaService.dragend.subscribe(function(){
-      self.updateItems();
-    });
+    this.dragulaService.dragend.subscribe(() => this.updateItems());
   }
 
-  ngOnDestroy():void {
+  ngOnDestroy(): void {
     this.dragulaService.destroy('list-bag');
   }
 
-  addItem():void {
-    this.bookmarkService.addBookmark(new Bookmark());
-  }
-
-  getItems():Array<Bookmark> {
+  getItems(): Bookmark[] {
     return this.bookmarkService.getBookmarks();
   }
 
-  resetItems():void {
-    this.bookmarkService.resetBookmarks();
-  }
-
-  updateItems():void {
+  updateItems(): void {
     this.bookmarkService.updateBookmarks();
   }
 
-  removeItem(index:number):void {
+  removeItem(index: number): void {
     this.bookmarkService.removeBookmarkByIndex(index);
   }
 }
