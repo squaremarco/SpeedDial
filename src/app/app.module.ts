@@ -1,12 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DragulaModule } from 'ng2-dragula';
+import { RoutingModule } from './modules';
 
 import { AppComponent } from './app.component';
-import { AppRoutes } from './app.routes';
 import { BookmarkComponent, DialComponent, ListComponent, ImportModalComponent } from './components';
 import { BookmarkService } from "./services";
 
@@ -20,10 +19,10 @@ import { BookmarkService } from "./services";
     ImportModalComponent
   ],
   imports: [
-    RouterModule.forRoot(AppRoutes),
     BrowserModule,
     DragulaModule,
     NgbModule.forRoot(),
+    RoutingModule
   ],
   entryComponents: [
     ImportModalComponent
@@ -31,6 +30,6 @@ import { BookmarkService } from "./services";
   providers: [
     BookmarkService
   ],
-  bootstrap: [ AppComponent ]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
