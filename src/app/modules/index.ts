@@ -1,3 +1,1 @@
-import { RoutingModule } from './routing/routing.module';
-
-export { RoutingModule };
+export { RoutingModule } from './routing/routing.module';
