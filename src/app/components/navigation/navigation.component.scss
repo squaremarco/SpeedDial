@@ -1,0 +1,17 @@
+.navbar-dark {
+  .navbar-text {
+    color: #fff;
+  }
+}
+
+.navbar-light {
+  .navbar-text {
+    color: #383838;
+  }
+}
+
+.btn-outline-light{
+  &:hover {
+    color: #343a40;
+  }
+}
