@@ -1,7 +1,7 @@
 <div class="modal-body">
-  <input class="form-control" (input)="string = $event.target.value" placeholder="Insert import string">
+  <input #importString class="form-control" placeholder="Insert import string">
 </div>
 <div class="modal-footer">
   <button type="button" class="btn btn-outline-dark" (click)="activeModal.close()">Close</button>
-  <button type="button" class="btn btn-dark" (click)="importItems(string); activeModal.close()">Import</button>
+  <button type="button" class="btn btn-dark" (click)="importItems(importString.value); activeModal.close()">Import</button>
 </div>

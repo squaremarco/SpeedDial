@@ -8,7 +8,6 @@ import { BookmarkService } from '../../services';
   styleUrls: ['./import-modal.component.scss']
 })
 export class ImportModalComponent {
-  string: string = '';
   constructor(private bookmarkService: BookmarkService, public activeModal: NgbActiveModal) { }
 
   importItems(string: string) {
