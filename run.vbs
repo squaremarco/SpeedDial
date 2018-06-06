@@ -1,0 +1,1 @@
+CreateObject("Wscript.Shell").Run "http-server dist/ -p 8080", 0
