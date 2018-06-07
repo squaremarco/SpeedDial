@@ -1,1 +1,1 @@
-CreateObject("Wscript.Shell").Run "http-server dist/ -p 8080", 0
+CreateObject("Wscript.Shell").Run "npm run host", 0
