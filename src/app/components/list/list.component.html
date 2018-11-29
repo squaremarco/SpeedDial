@@ -1,12 +1,33 @@
 <div class="container pt-5 pb-3">
-  <div class="list-group" [dragula]='"list-bag"' [dragulaModel]='getItems()'>
-    <div *ngFor='let item of getItems(); index as i' class="list-group-item">
+  <div class="list-group" dragula="list-bag" [dragulaModel]="getItems()">
+    <div *ngFor="let item of getItems(); index as i" class="list-group-item">
       <div class="input-group">
-        <span class="input-group-addon dragula-handle">@</span>
-        <input type="text" class="form-control" placeholder="Title" [value]='item.title' (keyup)="item.title = $event.target.value; updateItems();">
-        <input type="text" class="form-control" placeholder="Url" [value]='item.url' (keyup)="item.url = $event.target.value; updateItems();">
-        <input type="text" class="form-control" placeholder="ImageUrl" [value]='item.imageUrl' (keyup)="item.imageUrl = $event.target.value; updateItems();">
-        <span class="btn-size-sm input-group-addon item-delete" (click)="removeItem(i);">🞨</span>
+        <div class="input-group-prepend"><span class="input-group-text dragula-handle">@</span></div>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Title"
+          [value]="item.title"
+          (keyup)="item.title = $event.target.value; updateItems()"
+        />
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Url"
+          [value]="item.url"
+          (keyup)="item.url = $event.target.value; updateItems()"
+        />
+        <input
+          type="text"
+          class="form-control"
+          placeholder="ImageUrl"
+          [value]="item.imageUrl"
+          (keyup)="item.imageUrl = $event.target.value; updateItems()"
+        />
+
+        <div class="input-group-append">
+          <span class="btn-size-sm input-group-text item-delete" (click)="removeItem(i)">🞨</span>
+        </div>
       </div>
     </div>
   </div>

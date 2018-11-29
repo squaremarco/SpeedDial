@@ -13,14 +13,15 @@ export class ListComponent implements OnInit, OnDestroy {
   constructor(private dragulaService: DragulaService, private bookmarkService: BookmarkService) {
   };
 
+
   ngOnInit(): void {
-    this.dragulaService.setOptions('list-bag', {
+    this.dragulaService.createGroup('list-bag', {
       'moves': function (e, c, h) {
         return h.className.includes("dragula-handle");
       }
     });
 
-    this.dragulaService.dragend.subscribe(() => this.updateItems());
+    this.dragulaService.dragend().subscribe(() => this.updateItems());
   }
 
   ngOnDestroy(): void {

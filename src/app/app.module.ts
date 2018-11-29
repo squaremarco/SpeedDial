@@ -22,7 +22,7 @@ import { BookmarkService } from "./services";
   ],
   imports: [
     BrowserModule,
-    DragulaModule,
+    DragulaModule.forRoot(),
     NgbModule.forRoot(),
     RoutingModule
   ],
