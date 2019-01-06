@@ -1,6 +1,6 @@
 <div class="container pt-5 pb-3">
-  <div class="list-group" dragula="list-bag" [dragulaModel]="getItems()">
-    <div *ngFor="let item of getItems(); index as i" class="list-group-item">
+  <div class="list-group" dragula="list-bag" [(dragulaModel)]="items">
+    <div *ngFor="let item of items; index as i" class="list-group-item">
       <div class="input-group">
         <div class="input-group-prepend"><span class="input-group-text dragula-handle">@</span></div>
         <input

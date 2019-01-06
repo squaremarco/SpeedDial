@@ -10,14 +10,16 @@ import { BookmarkService } from '../../services';
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit, OnDestroy {
-  constructor(private dragulaService: DragulaService, private bookmarkService: BookmarkService) {
-  };
+  public items: Bookmark[];
 
+  constructor(private dragulaService: DragulaService, private bookmarkService: BookmarkService) {
+    this.getItems();
+  }
 
   ngOnInit(): void {
     this.dragulaService.createGroup('list-bag', {
-      'moves': function (e, c, h) {
-        return h.className.includes("dragula-handle");
+      moves: function(e, c, h) {
+        return h.className.includes('dragula-handle');
       }
     });
 
@@ -28,12 +30,12 @@ export class ListComponent implements OnInit, OnDestroy {
     this.dragulaService.destroy('list-bag');
   }
 
-  getItems(): Bookmark[] {
-    return this.bookmarkService.getBookmarks();
+  getItems(): void {
+    this.items = this.bookmarkService.getBookmarks();
   }
 
   updateItems(): void {
-    this.bookmarkService.updateBookmarks();
+    this.bookmarkService.setBookmarks(this.items);
   }
 
   removeItem(index: number): void {

@@ -59,6 +59,7 @@ export class BookmarkService {
   }
 
   updateBookmarks():void {
+    console.log(this.bookmarks);
     localStorage.setItem('bookmarks', this.getBookmarksAsString());
   }
 }
