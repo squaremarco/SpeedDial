@@ -1,6 +1,6 @@
 let exec = require('child_process').exec;
 
-let child = exec('npm start');
+let child = exec('yarn start');
 
 child.stdout.on('data', function(data) {
   process.stdout.write(data);

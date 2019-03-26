@@ -6,18 +6,18 @@
   "scripts": {
     "ng": "ng",
     "serve": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod --progress",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "clean:dist": "rimraf dist",
     "clean:node": "rimraf node_modules",
-    "clean:all": "concurrently \"npm run clean:node\" \"npm run clean:dist\"",
+    "clean:all": "concurrently \"yarn clean:node\" \"yarn clean:dist\"",
     "service:create": "node util/createService.js",
     "service:remove": "node util/removeService.js",
     "start": "serve -n -l 8080 dist/",
-    "postinstall": "npm run build && npm run service:create",
-    "preuninstall": "npm run clean:all && npm run service:remove"
+    "postinstall": "yarn build && yarn service:create",
+    "preuninstall": "yarn clean:all && yarn service:remove"
   },
   "private": true,
   "dependencies": {
@@ -62,7 +62,7 @@
     "protractor": "^5.4.1",
     "ts-node": "^7.0.1",
     "tslint": "^5.11.0",
-    "typescript": "^3.1.6",
+    "typescript": ">=3.1.1 <3.2",
     "uuid": "^3.3.2"
   }
 }
